@@ -1,0 +1,37 @@
+{
+  "name": "Every-Pusblished",
+  "version": "1.0.0",
+  "description": "Publica .....",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarl-alejandro/Every-Pusblished.git"
+  },
+  "keywords": [
+    "app"
+  ],
+  "author": "Alejandro Rivas <jarlalejor@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jarl-alejandro/Every-Pusblished/issues"
+  },
+  "homepage": "https://github.com/jarl-alejandro/Every-Pusblished",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "cors": "^2.6.0",
+    "express": "^4.12.4",
+    "jade": "^1.10.0",
+    "mongoose": "^4.0.3"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "gulp": "^3.8.11",
+    "gulp-uglify": "^1.2.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

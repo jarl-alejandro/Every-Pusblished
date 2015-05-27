@@ -1,0 +1,2 @@
+
+exports.lol = "LOL XD :) :)"
