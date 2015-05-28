@@ -1,22 +1,21 @@
 (function(){
+    'use strict'
 
-  var angular = require("angular")
-  var ngResource = require("angular-resource")
-  var ngRoute = require("angular-route")
+    var angular = require("angular")
+    var ngResource = require("angular-resource")
+    var ngRoute = require("angular-route")
+    var homeCrtl = require("./controller/home")
 
-  var app = angular.module("EveryPublished", [ngResource, ngRoute])
+    var app = angular.module("EveryPublished", [ngResource, ngRoute])
 
-  app.controller("home", ["$scope",function($scope){
-    $scope.lol = "Alejandro Rivas";
-  }])
-
-  app.config(["$routeProvider",function($routeProvider){
-      $routeProvider
+    app.config(["$routeProvider",function($routeProvider){
+        $routeProvider
         .when("/", {
-            controller: "home",
+            controller: "homeCrtl",
             templateUrl: "templates/home.html"
         })
-  }])
+    }])
 
+    app.controller("homeCrtl", ["$scope", homeCrtl.home])
 
 })()
