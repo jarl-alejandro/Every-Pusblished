@@ -7,7 +7,7 @@ var source = require('vinyl-source-stream')
 var browserify = require('browserify')
 
 gulp.task('browserify', function(){
-    return browserify('./static/app/scripts/main')
+    return browserify('./static/app/scripts/app.js')
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
