@@ -31,7 +31,8 @@
     "jade": "^1.10.0",
     "jwt-simple": "^0.3.0",
     "moment": "^2.10.3",
-    "mongoose": "^4.0.3"
+    "mongoose": "^4.0.3",
+    "satellizer": "^0.10.1"
   },
   "devDependencies": {
     "browserify": "^10.2.1",

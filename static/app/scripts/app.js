@@ -1,21 +1,32 @@
 (function(){
+
     'use strict'
 
-    var angular = require("angular")
-    var ngResource = require("angular-resource")
-    var ngRoute = require("angular-route")
-    var homeCrtl = require("./controller/home")
+    var app = angular.module("EveryPublished", ["ngResource", "ui.router", "satellizer"])
 
-    var app = angular.module("EveryPublished", [ngResource, ngRoute])
-
-    app.config(["$routeProvider",function($routeProvider){
-        $routeProvider
-        .when("/", {
+    app.config(function($stateProvider, $authProvider){
+        $stateProvider
+        .state("inicio", {
+            url: "/",
             controller: "homeCrtl",
             templateUrl: "templates/home.html"
         })
-    }])
+        .state("signup",{
+            url: "/signup",
+            controller:"signupCtrl",
+            templateUrl: "templates/signup.html"
+        })
+        .state("login",{
+          url: "/login",
+          controller: "loginCtrl",
+          templateUrl: "templates/login.html"
+        })
+        .state("/logout", {
+          url: "/logout",
+          controller: "logoutCtrl",
+          templateUrl: null
+        })
 
-    app.controller("homeCrtl", ["$scope", homeCrtl.home])
+    })
 
 })()

@@ -8,7 +8,7 @@ var App = require('./lib')
 var everyPublised = new App({})
 var server = http.createServer(everyPublised.app)
 
-mongoose.connect("mongodb://localhost/everyPublised", onListenDB)
+mongoose.connect("mongodb://localhost/publicar", onListenDB)
 
 function onListenDB(err){
     if(err)
@@ -18,5 +18,5 @@ function onListenDB(err){
 }
 
 server.listen(port, function(){
-    console.log('App running in http://localhost:'+port)
+    console.log('App running in http://localhost:' + port)
 })

@@ -4,5 +4,13 @@ html(lang="es", ng-app="EveryPublished")
         title Every Publised
     body
         h1 Every Publised
-        section(ng-view)
-        script(type='text/javascript', src="/dist/js/bundle.js")
+        section(ui-view)
+        script(type='text/javascript', src="/app/vendor/angular.js")
+        script(type='text/javascript', src="/app/vendor/angular-resource.js")
+        script(type='text/javascript', src="/app/vendor/angular-ui-router.js")
+        script(type='text/javascript', src="/app/vendor/satellizer.js")
+
+        script(type='text/javascript', src="/app/scripts/app.js")
+        script(type='text/javascript', src="/app/scripts/controllers/home.js")
+        script(type='text/javascript', src="/app/scripts/controllers/auth.js")
+        script(type='text/javascript', src="/app/scripts/services/account.js")

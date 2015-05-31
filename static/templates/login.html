@@ -1,0 +1,12 @@
+<section>Iniciar session</section>
+
+<form method="post" ng-submit="login()" name="loginForm">
+  <p>email
+    <input type="email" ng-model="email" placeholder="Email" ng-required="true" autofocus>
+  </p>
+  <p>password
+    <input type="password" name="password" ng-model="password" placeholder="Password" required>
+  </p>
+  <button type="submit" ng-disabled="loginForm.$invalid">Log in</button>
+
+</form>
