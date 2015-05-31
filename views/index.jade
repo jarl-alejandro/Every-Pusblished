@@ -1,11 +1,8 @@
 doctype html
-
-html(lang="es")
-head
-    meta(charset="UTF-8")
-    title Every Publised
-head
-body
-    h1  Every Publised
-    script(type='text/javascript' src="/dist/js/bundle.js")
-body
+html(lang="es", ng-app="EveryPublished")
+    head
+        title Every Publised
+    body
+        h1 Every Publised
+        section(ng-view)
+        script(type='text/javascript', src="/dist/js/bundle.js")
