@@ -1,6 +1,18 @@
 <h2>Esto es incretado</h2>
 <a ng-href="#/login">Iniciar sesion</a>
 <a ng-href="#/signup">Regitrate</a>
-<a href="#/logout">salir</a>
+<a ng-href="#/logout">salir</a>
 <p>{{ user.email }}</p>
 <p>{{ user.name }}</p>
+<img ng-src="{{ user.avatar }}" width="50" height="50">
+<a ng-href="#/new">Nueva publicacion</a>
+<section>
+  <ul ng-repeat="publish in publishes">
+    <li>
+      <figure>
+        <img src="{{ publish.photo }}" width="50" height="50">
+        <figcaption>{{ publish.name }}</figcaption>
+      </figure>
+    </li>
+  </ul>
+</section>

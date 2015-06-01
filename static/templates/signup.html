@@ -1,23 +1,41 @@
 <section>
     <h3>Registrate y se parte de de Every Published</h3>
-    <form method="POST" ng-submit="signup()">
+    <form method="POST" ng-submit="signup()" name=" signupForm" enctype="multipart/form-data">
         <p> Name:
             <input type="text" placeholder="Name" ng-model="name" />
         </p>
         <p> Email:
             <input type="email" placeholder="Email" ng-model="email" />
         </p>
-        <p>Password
-            <input type="password" placeholder="Password" ng-model="password" />
+
+        <p>
+          <input password-strength type="password" name="password"
+            ng-model="password" placeholder="Password" required>
+          <div ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
+            <div ng-message="required">Se require la contraseña.</div>
+          </div>
         </p>
+
+        <p>
+          <input password-match="password" type="password" name="confirmPassword"
+            ng-model="confirmPassword" placeholder="Confirme la contraseña">
+          <div ng-if="signupForm.confirmPassword.$dirty" ng-messages="signupForm.confirmPassword.$error">
+              <div ng-message="compareTo">Las contraseña debe coincidir.</div>
+          </div>
+        </p>
+
         <p>Direction
             <input type="text" placeholder="Direction" ng-model="direction" />
         </p>
         <p>About
             <textarea placeholder="About" ng-model="about"></textarea>
         </p>
+        <p>avatar
+          <input type="file" file-model="avatar">
+        </p>
         <p>
-            <input type="submit" />
+            <input type="submit" ng-disabled="signupForm.$invalid"/>
         </p>
     </form>
+    <p class="text-center">Already have an account? <a href="/#/login">Log in now</a></p>
 </section>

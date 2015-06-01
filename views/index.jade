@@ -2,15 +2,27 @@ doctype html
 html(lang="es", ng-app="EveryPublished")
     head
         title Every Publised
+        link(rel="stylesheet" href="/css/style.css")
+        link(rel="stylesheet" href="/css/bootstrap.css")
     body
         h1 Every Publised
         section(ui-view)
         script(type='text/javascript', src="/app/vendor/angular.js")
+        script(type='text/javascript', src="/app/vendor/angular-route.js")
         script(type='text/javascript', src="/app/vendor/angular-resource.js")
         script(type='text/javascript', src="/app/vendor/angular-ui-router.js")
+        script(type='text/javascript', src="/app/vendor/angular-messages.js")
+        script(type='text/javascript', src="/app/vendor/angular-animate.js")
+        script(type='text/javascript', src="/app/vendor/angular-strap.js")
+        script(type='text/javascript', src="/app/vendor/angular-strap.tpl.js")
         script(type='text/javascript', src="/app/vendor/satellizer.js")
 
         script(type='text/javascript', src="/app/scripts/app.js")
+        script(type='text/javascript', src="/app/scripts/directives/passwordStrength.js")
+        script(type='text/javascript', src="/app/scripts/directives/passwordMatch.js")
+        script(type='text/javascript', src="/app/scripts/directives/uploadImg.js")
         script(type='text/javascript', src="/app/scripts/controllers/home.js")
         script(type='text/javascript', src="/app/scripts/controllers/auth.js")
+        script(type='text/javascript', src="/app/scripts/controllers/published.js")
         script(type='text/javascript', src="/app/scripts/services/account.js")
+        script(type='text/javascript', src="/app/scripts/services/publishedResource.js")
