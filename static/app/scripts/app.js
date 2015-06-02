@@ -6,24 +6,25 @@
     ["ngResource", "ui.router", 'ngMessages', 'mgcrea.ngStrap', "satellizer"])
 
   app.config(function($stateProvider, $authProvider, $httpProvider){
+
     $stateProvider
-    .state("inicio", {
-        url: "/",
-        templateUrl: "templates/home.html",
-        controller: "homeCrtl",
-        resolve: {
-          authenticated: function($q, $location, $auth){
-            var deferred = $q.defer()
+    .state("index",{
+      url: "/",
+      controller: "homeCrtl",
+      templateUrl: "templates/home.html",
+      resolve: {
+        authenticated: function($q, $location, $auth){
+          var deferred = $q.defer()
 
-            if(!$auth.isAuthenticated()){
-              $location.path("/login")
-            }
-            else
-              deferred.resolve()
-
-            return deferred.promise
+          if(!$auth.isAuthenticated()){
+            $location.path("/login")
           }
+          else
+            deferred.resolve()
+
+          return deferred.promise
         }
+      }
     })
     .state("signup",{
         url: "/signup",
@@ -43,7 +44,25 @@
     .state("new",{
       url: "/new",
       controller: "newPublishedCtrl",
-      templateUrl: "templates/new.html"
+      templateUrl: "templates/new.html",
+      resolve: {
+        authenticated: function($q, $location, $auth){
+          var deferred = $q.defer()
+
+          if(!$auth.isAuthenticated()){
+            $location.path("/login")
+          }
+          else
+            deferred.resolve()
+
+          return deferred.promise
+        }
+      }
+    })
+    .state("published",{
+      url:"/published/:id",
+      templateUrl: "templates/pubDetail.html",
+      controller: "publishedCtrl"
     })
 
     $httpProvider.defaults.transformRequest = function(data){

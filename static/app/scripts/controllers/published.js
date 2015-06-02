@@ -37,4 +37,9 @@
 
   })
 
+  app.controller("publishedCtrl", function($scope, $stateParams, PublishedResource){
+    $scope.published = PublishedResource.get({ id:$stateParams.id })
+  })
+
 })()
+

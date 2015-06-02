@@ -1,0 +1,21 @@
+<section>
+
+  <article class="publish card">
+    <figcaption>
+      <img src="{{ published.photo }}" width="716" height="100" />
+    </figcaption>
+    <h2>{{ published.name }}</h2>
+    <p>{{ published.description }}</p>
+  </article>
+
+  <article class="comment">
+  </article>
+</section>
+
+<aside class="author card">
+  <h3>Autor {{ published.user.name }}</h3>
+</aside>
+
+<aside class="otherAuthor card">
+  <h3>Otras publicaciones por {{ published.user.name }}</h3>
+</aside>

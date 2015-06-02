@@ -10,8 +10,10 @@
   <ul ng-repeat="publish in publishes">
     <li>
       <figure>
-        <img src="{{ publish.photo }}" width="50" height="50">
-        <figcaption>{{ publish.name }}</figcaption>
+        <img src="{{ publish.photo }}" width="48" height="50">
+        <div>
+          <a ng-href="#/published/{{ publish.id }}">{{ publish.name }}</a>
+        </div>
       </figure>
     </li>
   </ul>
