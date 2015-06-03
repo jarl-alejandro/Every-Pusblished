@@ -5,8 +5,11 @@ html(lang="es", ng-app="EveryPublished")
       meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
       title Every Publised
       link(rel="stylesheet" href="/css/bootstrap.css")
+      link(rel="stylesheet" href="/css/flexboxgrid.min.css")
       link(rel="stylesheet" href="/css/style.css")
+
     body
+        a(href="#/login") INiciar sesion
         section(ui-view)
         script(type='text/javascript', src="/app/vendor/angular.js")
         script(type='text/javascript', src="/app/vendor/angular-route.js")

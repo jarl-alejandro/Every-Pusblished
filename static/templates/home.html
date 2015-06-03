@@ -1,20 +1,25 @@
-<h2>Esto es incretado</h2>
-<a ng-href="#/login">Iniciar sesion</a>
-<a ng-href="#/signup">Regitrate</a>
-<a ng-href="#/logout">salir</a>
-<p>{{ user.email }}</p>
-<p>{{ user.name }}</p>
-<img ng-src="{{ user.avatar }}" width="50" height="50">
-<a ng-href="#/new">Nueva publicacion</a>
 <section>
-  <ul ng-repeat="publish in publishes">
-    <li>
-      <figure>
-        <img src="{{ publish.photo }}" width="48" height="50">
-        <div>
-          <a ng-href="#/published/{{ publish.id }}">{{ publish.name }}</a>
+  <artile ng-repeat="publish in publishes">
+    <div class="card card-publish">
+      <a ng-href="#/published/{{ publish.id }}" class="foto">
+        <img src="{{ publish.photo }}" alt="{{ publish.name }}" class="publish-foto">
+      </a>
+      <div class="about-header">
+        <h2 class="about-header-title">
+          {{ publish.name }}
+        </h2>
+      </div>
+
+      <div class="about-author relative">
+        <a ng-href="#/published/{{ publish.id }}" class="pointer">
+          <span>></span>
+        </a>
+        <div class="about-author-avatar">
+          <img src="{{ publish.user.avatar }}" alt="{{ publish.user.name }}" width="50" height="50" />
         </div>
-      </figure>
-    </li>
-  </ul>
+        <h3 class="about-author-name">{{ publish.user.name }}</h3>
+      </div>
+
+    </div>
+  </artile>
 </section>
