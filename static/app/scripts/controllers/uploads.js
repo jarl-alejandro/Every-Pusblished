@@ -23,6 +23,24 @@
 
   })
 
-  app.controller("newTwoCtrl", function($scope){})
+  app.controller("signupOneCtrl", function($scope, $state){
+
+    var nextState = function(currentState){
+      switch (currentState) {
+        case 'signup.signupOne':
+            return 'signup.signupTwo'
+            break;
+        default:
+            alert('No se han encontrado interruptor');
+      }
+    }
+
+    $scope.goToNextSection = function(isFormValid){
+      if(isFormValid){
+        $state.go(nextState($state.current.name));
+      }
+    }
+
+  })
 
 })()

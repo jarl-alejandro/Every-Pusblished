@@ -31,6 +31,15 @@
         controller:"signupCtrl",
         templateUrl: "templates/signup.html"
     })
+    .state("signup.signupOne",{
+      url: "/upload/1",
+      templateUrl:"templates/signup-upload-1.html",
+      controller: "signupOneCtrl"
+    })
+    .state("signup.signupTwo",{
+      url: "/upload/2",
+      templateUrl:"templates/signup-upload-2.html"
+    })
     .state("login",{
       url: "/login",
       controller: "loginCtrl",
@@ -66,13 +75,12 @@
     })
     .state("new.newOne",{
       url: "/upload/1",
-      templateUrl:"templates/upload-1.html",
+      templateUrl:"templates/new-upload-1.html",
       controller: "newOneCtrl"
     })
     .state("new.newTwo",{
       url: "/upload/2",
-      templateUrl:"templates/upload-2.html",
-      controller: "newTwoCtrl"
+      templateUrl:"templates/new-upload-2.html"
     })
 
     $urlRouterProvider.otherwise('/')

@@ -1,0 +1,30 @@
+<div class="form-group" ng-class='{
+  "has-focus":form.name.hasFocus,
+  "has-success":form.name.$valid,
+  "has-error":form.name.$invalid && (form.$submitted || form.name.$touched),
+  "is-empty":!form.name.$viewValue}'>
+
+  <label for="name">Nombre</label>
+  <input type="text" name="name" ng-model="formData.name" required
+    ng-focus='form.name.hasFocus=true', ng-blur='form.name.hasFocus=false' />
+  <p ng-show="form.name.$error.required && (form.name.$touched || submitted)" class="error-block">
+    Name is Required!
+  </p>
+</div>
+<div class="form-group" ng-class='{
+  "has-focus":form.photo.hasFocus,
+  "has-success":form.photo.$valid,
+  "has-error":form.photo.$invalid && (form.$submitted || form.photo.$touched),
+  "is-empty":!form.formData.photo.$viewValue}'>
+
+  <label for="photo">photo</label>
+  <input type="file" file-model="formData.photo" name="photo" required
+    ng-focus='form.photo.hasFocus=true', ng-blur='form.photo.hasFocus=false' />
+
+  <p ng-show="form.photo.$error.required && (form.photo.$touched || submitted)"class="error-block">
+    photo is Required!
+  </p>
+</div>
+<div class="next">
+  <a ng-click="goToNextSection(form.$valid)">Next</a>
+</div>
