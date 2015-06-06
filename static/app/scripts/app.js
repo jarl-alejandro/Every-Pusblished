@@ -41,6 +41,11 @@
       controller: "logoutCtrl",
       templateUrl: null
     })
+    .state("published",{
+      url:"/published/:id",
+      templateUrl: "templates/pubDetail.html",
+      controller: "publishedCtrl"
+    })
     .state("new",{
       url: "/new",
       controller: "newPublishedCtrl",
@@ -59,10 +64,15 @@
         }
       }
     })
-    .state("published",{
-      url:"/published/:id",
-      templateUrl: "templates/pubDetail.html",
-      controller: "publishedCtrl"
+    .state("new.newOne",{
+      url: "/upload/1",
+      templateUrl:"templates/upload-1.html",
+      controller: "newOneCtrl"
+    })
+    .state("new.newTwo",{
+      url: "/upload/2",
+      templateUrl:"templates/upload-2.html",
+      controller: "newTwoCtrl"
     })
 
     $httpProvider.defaults.transformRequest = function(data){

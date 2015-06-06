@@ -7,68 +7,18 @@
 
 <section>
   <div class="wrapper">
-    <div class="form-wrapper">
+   <h1>
+      <a ui-sref-active="active" ui-sref=".newOne">1</a>
+      <a ui-sref=".newTwo">2</a>
+    </h1>
+
+    <div class="form-wrapper form-new">
       <h1>Pon tu publicidad {{ user.name }}</h1>
-      <form method="POST" ng-submit="newPublish()" enctype="multipart/form-data" name="form">
-        <div class="form-group" ng-class='{
-          "has-focus":form.name.hasFocus,
-          "has-success":form.name.$valid,
-          "has-error":form.name.$invalid && (form.$submitted || form.name.$touched),
-          "is-empty":!form.name.$viewValue}'>
 
-          <label for="name">Nombre</label>
-          <input type="text" name="name" ng-model="name" required
-            ng-focus='form.name.hasFocus=true', ng-blur='form.name.hasFocus=false' />
-          <p ng-show="form.name.$error.required && (form.name.$touched || submitted)" class="error-block">
-            Name is Required!
-          </p>
-        </div>
-        <div class="form-group" ng-class='{
-          "has-focus":form.price.hasFocus,
-          "has-success":form.price.$valid,
-          "has-error":form.price.$invalid && (form.$submitted || form.price.$touched),
-          "is-empty":!form.price.$viewValue}'>
-
-          <label for="name">Precio</label>
-          <input type="number" name="price" ng-model="price" required
-            ng-focus='form.price.hasFocus=true', ng-blur='form.price.hasFocus=false' />
-
-          <p ng-show="form.price.$error.required && (form.price.$touched || submitted)" class="error-block">
-            price is Required!
-          </p>
-        </div>
-        <div class="form-group" ng-class='{
-          "has-focus":form.photo.hasFocus,
-          "has-success":form.photo.$valid,
-          "has-error":form.photo.$invalid && (form.$submitted || form.photo.$touched),
-          "is-empty":!form.photo.$viewValue}'>
-
-          <label for="photo">photo</label>
-          <input type="file" file-model="photo" name="photo" required
-            ng-focus='form.photo.hasFocus=true', ng-blur='form.photo.hasFocus=false' />
-
-          <p ng-show="form.photo.$error.required && (form.photo.$touched || submitted)"class="error-block">
-            photo is Required!
-          </p>
-        </div>
-
-        <div class="form-group" ng-class='{
-          "has-focus":form.description.hasFocus,
-          "has-success":form.description.$valid,
-          "has-error":form.description.$invalid && (form.$submitted || form.description.$touched),
-          "is-empty":!form.description.$viewValue}'>
-
-          <label for="description">description</label>
-          <textarea name="description" ng-model="description" required
-            ng-focus='form.description.hasFocus=true', ng-blur='form.description.hasFocus=false'>
-          </textarea>
-          <p ng-show="form.description.$error.required && (form.description.$touched || submitted)"
-            class="error-block">
-            description is Required!
-          </p>
-        </div>
-        <input type="submit">
+      <form method="POST" enctype="multipart/form-data" name="form">
+        <div ui-view></div>
       </form>
+
     </div>
   </div>
 </section>

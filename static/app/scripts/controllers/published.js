@@ -23,7 +23,6 @@
     $scope.getProfile()
 
     $scope.newPublish = function(){
-      console.log("foto >>", $scope.photo)
       PublishedResource.save({
         "name" : $scope.name,
         "price" :  $scope.price,
