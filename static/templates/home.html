@@ -1,8 +1,17 @@
+<header class="app-bar promote-layer paper-toolbar paper-shadow">
+  <div class="app-bar-container paper-toolbar">
+    <button class="menu">=</button>
+    <h1 class="logo">
+      Material toolbar
+      <a href="#/logout">Salir</a>
+    </h1>
+  </div>
+</header>
 <section>
   <artile ng-repeat="publish in publishes">
     <div class="card card-publish">
       <a ng-href="#/published/{{ publish.id }}" class="foto">
-        <img src="{{ publish.photo }}" alt="{{ publish.name }}" class="publish-foto">
+        <img src="{{ publish.photo }}" alt="{{ publish.name }}" class="publish-foto bounceIn">
       </a>
       <div class="about-header">
         <h2 class="about-header-title">

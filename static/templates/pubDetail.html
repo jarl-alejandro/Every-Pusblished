@@ -1,5 +1,13 @@
-<section>
+<header class="app-bar promote-layer paper-toolbar paper-shadow">
+  <div class="app-bar-container paper-toolbar">
+    <button class="menu">=</button>
+    <h1 class="logo">
+      Material toolbar
+    </h1>
+  </div>
+</header><hr><hr>
 
+<section>
   <article class="publish card">
     <figcaption>
       <img src="{{ published.photo }}" width="716" height="100" />
@@ -15,6 +23,6 @@
 <aside class="author card">
   <h3>Autor {{ published.user.name }}</h3>
 </aside>
-<aside class="card otherAuthor">
+<aside class="card other-author">
   <h3>Otras publicaciones por {{ published.user.name }}</h3>
 </aside>
