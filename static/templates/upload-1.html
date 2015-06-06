@@ -1,32 +1,30 @@
-<div class="upload-1">
-  <div class="form-group" ng-class='{
-    "has-focus":form.name.hasFocus,
-    "has-success":form.name.$valid,
-    "has-error":form.name.$invalid && (form.$submitted || form.name.$touched),
-    "is-empty":!form.name.$viewValue}'>
+<div class="form-group" ng-class='{
+  "has-focus":form.formData.name.hasFocus,
+  "has-success":form.formData.name.$valid,
+  "has-error":form.formData.name.$invalid && (form.$submitted || form.formData.name.$touched),
+  "is-empty":!form.formData.name.$viewValue}'>
 
-    <label for="name">Nombre</label>
-    <input type="text" name="name" ng-model="name" required
-      ng-focus='form.name.hasFocus=true', ng-blur='form.name.hasFocus=false' />
-    <p ng-show="form.name.$error.required && (form.name.$touched || submitted)" class="error-block">
-      Name is Required!
-    </p>
-  </div>
-  <div class="form-group" ng-class='{
-    "has-focus":form.photo.hasFocus,
-    "has-success":form.photo.$valid,
-    "has-error":form.photo.$invalid && (form.$submitted || form.photo.$touched),
-    "is-empty":!form.photo.$viewValue}'>
+  <label for="name">Nombre</label>
+  <input type="text" name="name" ng-model="formData.name" required
+    ng-focus='form.formData.name.hasFocus=true', ng-blur='form.formData.name.hasFocus=false' />
+  <p ng-show="form.formData.name.$error.required && (form.formData.name.$touched || submitted)" class="error-block">
+    Name is Required!
+  </p>
+</div>
+<div class="form-group" ng-class='{
+  "has-focus":form.formData.photo.hasFocus,
+  "has-success":form.formData.photo.$valid,
+  "has-error":form.formData.photo.$invalid && (form.$submitted || form.formData.photo.$touched),
+  "is-empty":!form.formData.photo.$viewValue}'>
 
-    <label for="photo">photo</label>
-    <input type="file" file-model="photo" name="photo" required
-      ng-focus='form.photo.hasFocus=true', ng-blur='form.photo.hasFocus=false' />
+  <label for="photo">photo</label>
+  <input type="file" file-model="formData.photo" name="photo" required
+    ng-focus='form.formData.photo.hasFocus=true', ng-blur='form.formData.photo.hasFocus=false' />
 
-    <p ng-show="form.photo.$error.required && (form.photo.$touched || submitted)"class="error-block">
-      photo is Required!
-    </p>
-  </div>
-  <div class="next">
-    <a ng-click="goToNextSection(form.$valid)">Next</a>
-  </div>
+  <p ng-show="form.formData.photo.$error.required && (form.formData.photo.$touched || submitted)"class="error-block">
+    photo is Required!
+  </p>
+</div>
+<div class="next">
+  <a ng-click="goToNextSection(form.$valid)">Next</a>
 </div>

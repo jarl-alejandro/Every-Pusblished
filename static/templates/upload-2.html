@@ -1,35 +1,33 @@
-<div class="upload-2">
-  <div class="form-group" ng-class='{
-    "has-focus":form.description.hasFocus,
-    "has-success":form.description.$valid,
-    "has-error":form.description.$invalid && (form.$submitted || form.description.$touched),
-    "is-empty":!form.description.$viewValue}'>
+<div class="form-group" ng-class='{
+  "has-focus":form.formData.description.hasFocus,
+  "has-success":form.formData.description.$valid,
+  "has-error":form.formData.description.$invalid && (form.$submitted || form.formData.description.$touched),
+  "is-empty":!form.formData.description.$viewValue}'>
 
-    <label for="description">description</label>
-    <textarea name="description" ng-model="description" required
-      ng-focus='form.description.hasFocus=true', ng-blur='form.description.hasFocus=false'>
-    </textarea>
-    <p ng-show="form.description.$error.required && (form.description.$touched || submitted)"
-      class="error-block">
-      description is Required!
-    </p>
-  </div>
-  <div class="form-group" ng-class='{
-    "has-focus":form.price.hasFocus,
-    "has-success":form.price.$valid,
-    "has-error":form.price.$invalid && (form.$submitted || form.price.$touched),
-    "is-empty":!form.price.$viewValue}'>
+  <label for="description">description</label>
+  <textarea name="description" ng-model="formData.description" required
+    ng-focus='form.formData.description.hasFocus=true', ng-blur='form.formData.description.hasFocus=false'>
+  </textarea>
+  <p ng-show="form.formData.description.$error.required && (form.formData.description.$touched || submitted)"
+    class="error-block">
+    description is Required!
+  </p>
+</div>
+<div class="form-group" ng-class='{
+  "has-focus":form.formData.price.hasFocus,
+  "has-success":form.formData.price.$valid,
+  "has-error":form.formData.price.$invalid && (form.$submitted || form.formData.price.$touched),
+  "is-empty":!form.formData.price.$viewValue}'>
 
-    <label for="name">Precio</label>
-    <input type="number" name="price" ng-model="price" required
-      ng-focus='form.price.hasFocus=true', ng-blur='form.price.hasFocus=false' />
+  <label for="name">Precio</label>
+  <input type="number" name="price" ng-model="formData.price" required
+    ng-focus='form.formData.price.hasFocus=true', ng-blur='form.formData.price.hasFocus=false' />
 
-    <p ng-show="form.price.$error.required && (form.price.$touched || submitted)" class="error-block">
-      price is Required!
-    </p>
-  </div>
-  <div class="send">
-    <a ng-click="new.newPublish()">Subir</a>
-    <!--<input type="submit" />-->
-  </div>
+  <p ng-show="form.formData.price.$error.required && (form.formData.price.$touched || submitted)" class="error-block">
+    price is Required!
+  </p>
+</div>
+<div class="send">
+  <!--<a ng-click="new.newPublish()">Subir</a> -->
+  <input type="submit" />
 </div>

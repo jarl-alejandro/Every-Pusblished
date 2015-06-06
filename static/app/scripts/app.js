@@ -3,9 +3,9 @@
   'use strict'
 
   var app = angular.module("EveryPublished",
-    ["ngResource", "ui.router", 'ngMessages', 'mgcrea.ngStrap', "satellizer"])
+    ["ngResource", "ui.router", 'ngMessages', 'mgcrea.ngStrap', "satellizer", "ngAnimate"])
 
-  app.config(function($stateProvider, $authProvider, $httpProvider){
+  app.config(function($stateProvider, $authProvider, $httpProvider, $urlRouterProvider){
 
     $stateProvider
     .state("index",{
@@ -74,6 +74,8 @@
       templateUrl:"templates/upload-2.html",
       controller: "newTwoCtrl"
     })
+
+    $urlRouterProvider.otherwise('/')
 
     $httpProvider.defaults.transformRequest = function(data){
       if(undefined === data)

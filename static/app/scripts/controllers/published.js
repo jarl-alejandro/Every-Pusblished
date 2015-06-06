@@ -5,6 +5,8 @@
 
   app.controller("newPublishedCtrl", function($scope, $alert, $location, Account, PublishedResource){
 
+    $scope.formData = {}
+
     $scope.getProfile = function(){
       Account.getProfile()
       .success(function(data){
@@ -23,13 +25,13 @@
     $scope.getProfile()
 
     $scope.newPublish = function(){
+      console.log("nombre ", $scope.formData.name)
       PublishedResource.save({
-        "name" : $scope.name,
-        "price" :  $scope.price,
-        "photo" :  $scope.photo,
-        "description" :  $scope.description
+        "name" : $scope.formData.name,
+        "price" :  $scope.formData.price,
+        "photo" :  $scope.formData.photo,
+        "description" :  $scope.formData.description
       }, function(data){
-        console.log(data)
         $location.path("/")
       })
     }
