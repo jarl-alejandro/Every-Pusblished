@@ -4,16 +4,15 @@
   "has-error":form.description.$invalid && (form.$submitted || form.description.$touched),
   "is-empty":!form.description.$viewValue}'>
 
-  <label for="description">description</label>
+  <label for="description">Descripcion</label>
   <textarea name="description" ng-model="formData.description" required
     ng-focus='form.description.hasFocus=true', ng-blur='form.description.hasFocus=false'>
   </textarea>
   <p ng-show="form.description.$error.required && (form.description.$touched || submitted)"
     class="error-block">
-    description is Required!
+    Descripcion es Requerido!
   </p>
 </div>
-
 <div class="form-group" ng-class='{
   "has-focus":form.price.hasFocus,
   "has-success":form.price.$valid,
@@ -21,18 +20,34 @@
   "is-empty":!form.price.$viewValue}'>
 
   <label for="name">Precio</label>
-  <input type="number" name="price" ng-model="formData.price" required
+
+  <input type="number" step="any" name="price" ng-model="formData.price" required
     ng-focus='form.price.hasFocus=true', ng-blur='form.price.hasFocus=false' />
 
   <p ng-show="form.price.$error.required && (form.price.$touched || submitted)" class="error-block">
-    price is Required!
+    Precio es Requerido!
   </p>
 </div>
 
-<div>
-  radiobox
+<div class="form-group" ng-class='{
+  "has-focus":form.category.hasFocus,
+  "has-success":form.category.$valid,
+  "has-error":form.category.$invalid && (form.$submitted || form.category.$touched),
+  "is-empty":!form.category.$viewValue}'>
+
+  <select name="category" ng-model="formData.category" required
+    ng-focus='form.category.hasFocus=true', ng-blur='form.category.hasFocus=false'>
+
+    <option value="Comida & dulces" selected>Comida & dulces</option>
+    <option value="Artesania">Artesania</option>
+  </select>
+
+  <p ng-show="form.category.$error.required && (form.category.$touched || submitted)" class="error-block">
+    categoria es Requerido!
+  </p>
+
 </div>
 
 <div class="send">
-  <input type="submit" />
+  <input type="submit" class="btn-publish" value="Publicar" />
 </div>

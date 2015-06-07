@@ -7,17 +7,26 @@
 
 <section>
   <div class="wrapper">
-    <div class="form-wrapper form-new">
-      <h1>
-        <a ui-sref-active="active" ui-sref=".newOne">1</a>
-        <a ui-sref-active="active" ui-sref=".newTwo">2</a>
-      </h1>
-      <h1>Pon tu publicidad {{ user.name }}</h1>
-
+    <div class="form-wrapper form-new card">
+      <div class="status-new">
+        <a ui-sref-active="active" ui-sref=".newOne">
+          <span>1</span>
+          Foto
+        </a>
+        <a ui-sref-active="active" ui-sref=".newTwo">
+          <span>2</span>
+          Descripcion
+        </a>
+      </div>
       <form method="POST" enctype="multipart/form-data" name="form" ng-submit="newPublish()">
         <div ui-view></div>
       </form>
-
     </div>
   </div>
 </section>
+
+
+
+
+
+

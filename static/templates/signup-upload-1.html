@@ -8,7 +8,7 @@
   <input type="text" name="name" ng-model="formData.name"required
     ng-focus='form.name.hasFocus=true', ng-blur='form.name.hasFocus=false' />
     <p ng-show="form.name.$error.required && (form.name.$touched || submitted)"
-      class="error-block">Name is Required!</p>
+      class="error-block">Nombre es Requerido!</p>
 </div>
 
 <div class="form-group" ng-class='{
@@ -21,9 +21,12 @@
   <input type="file" file-model="formData.avatar" name="avatar" required
     ng-focus='form.avatar.hasFocus=true', ng-blur='form.avatar.hasFocus=false' />
   <p ng-show="form.avatar.$error.required && (form.avatar.$touched || submitted)"class="error-block">
-    avatar is Required!
+    avatar es Requerido!
   </p>
 </div>
 <div class="next">
-  <a ng-click="goToNextSection(form.$valid)">Next</a>
+  <a ng-click="goToNextSection(form.$valid)" class="btn-next">
+    Siguiente paso
+    <span class="fa fa-arrow-circle-right"></span>
+  </a>
 </div>

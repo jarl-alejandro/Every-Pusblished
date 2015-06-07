@@ -4,12 +4,12 @@
   "has-error":form.direction.$invalid && (form.$submitted || form.direction.$touched),
   "is-empty":!form.direction.$viewValue}'>
 
-  <label for="direction">Direction</label>
+  <label for="direction">Direcion</label>
   <input type="text" name="direction" ng-model="formData.direction" required
     ng-focus='form.direction.hasFocus=true', ng-blur='form.direction.hasFocus=false' />
   <p ng-show="form.direction.$error.required && (form.direction.$touched || submitted)"
     class="error-block">
-    direction is Required!
+    Direcion es Requerido!
   </p>
 </div>
 
@@ -24,10 +24,10 @@
     ng-focus='form.about.hasFocus=true', ng-blur='form.about.hasFocus=false'>
   </textarea>
   <p ng-show="form.about.$error.required && (form.about.$touched || submitted)"class="error-block">
-    about is Required!
+    Sobre mi es Requerido!
   </p>
 </div>
 
-<div>
-  <input type="submit" />
+<div class="send">
+  <input type="submit" class="btn-publish" value="Registrarme" />
 </div>

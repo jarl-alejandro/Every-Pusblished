@@ -9,10 +9,10 @@
     ng-focus='form.email.hasFocus=true', ng-blur='form.email.hasFocus=false'>
     <p ng-show="form.email.$error.required && (form.email.$touched || submitted)"
       class="error-block">
-      Email is Required!
+      Email es Requerido!
     </p>
     <p ng-show="form.email.$error.email && (form.email.$touched || submitted)" class="error-block">
-      Email is Invalid!
+      Email es Invalido!
     </p>
 </div>
 
@@ -28,7 +28,7 @@
 
   <p ng-show="form.password.$error.required && (form.password.$touched || submitted)"
     class="error-block">
-    password is Required!
+    Contraseña es Requerido!
   </p>
   <div ng-if="form.password.$dirty" ng-messages="form.password.$error">
     <div ng-message="required">Se require la contraseña.</div>
@@ -48,12 +48,15 @@
 
   <p ng-show="form.confirmPassword.$error.required && (form.confirmPassword.$touched || submitted)"
     class="error-block">
-    password is Required!
+    Contraseña es Requerido!
   </p>
   <div ng-if="form.confirmPassword.$dirty" ng-messages="form.confirmPassword.$error">
       <div ng-message="compareTo">Las contraseña debe coincidir.</div>
   </div>
 </div>
 <div class="next">
-  <a ng-click="goToNextSection(form.$valid)">Next</a>
+  <a ng-click="goToNextSection(form.$valid)" class="btn-next">
+    Siguiente paso
+    <span class="fa fa-arrow-circle-right"></span>
+  </a>
 </div>
