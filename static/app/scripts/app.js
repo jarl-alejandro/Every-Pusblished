@@ -32,14 +32,21 @@
         templateUrl: "templates/signup.html"
     })
     .state("signup.signupOne",{
-      url: "/upload/1",
+      url: "/1",
       templateUrl:"templates/signup-upload-1.html",
       controller: "signupOneCtrl"
     })
     .state("signup.signupTwo",{
-      url: "/upload/2",
-      templateUrl:"templates/signup-upload-2.html"
+      url: "/2",
+      templateUrl:"templates/signup-upload-2.html",
+      controller: "signupTwoCtrl"
     })
+
+    .state("signup.signupThree",{
+      url: "/3",
+      templateUrl:"templates/signup-upload-3.html"
+    })
+
     .state("login",{
       url: "/login",
       controller: "loginCtrl",

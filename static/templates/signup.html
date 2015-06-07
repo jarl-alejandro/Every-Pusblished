@@ -6,17 +6,21 @@
 </header><hr><hr>
 
 <section>
-    <div class="wrapper">
-      <div class="form-wrapper">
-        <h1>
-          <a ui-sref-active="active" ui-sref=".signupOne">1</a>
-          <a ui-sref-active="active" ui-sref=".signupTwo">2</a>
-        </h1>
-        <h3>Registrate y se parte de de Every Published</h3>
-        <form method="POST" ng-submit="signup()" name="form" enctype="multipart/form-data">
-          <div ui-view></div>
-        </form>
-      </div>
+  <div class="wrapper">
+    <div class="form-wrapper">
+      <h1>
+        <a ui-sref-active="active" ui-sref=".signupOne">1</a>
+        <a ui-sref-active="active" ui-sref=".signupTwo">2</a>
+        <a ui-sref-active="active" ui-sref=".signupThree">3</a>
+      </h1>
+      <h3>Registrate y se parte de de Every Published</h3>
+      <form method="POST" ng-submit="signup()" name="form" enctype="multipart/form-data">
+        <div ui-view></div>
+      </form>
     </div>
-    <p class="text-center">Already have an account? <a href="/#/login">Log in now</a></p>
+  </div>
+  <p class="text-center">Already have an account? <a href="/#/login">Log in now</a></p>
+  <pre>
+    {{ formData }}
+  </pre>
 </section>

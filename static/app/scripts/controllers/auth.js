@@ -1,45 +1,47 @@
 (function(){
-    'use strict'
 
-    var app = angular.module("EveryPublished")
+  'use strict'
 
-    app.controller("signupCtrl", function($scope, $auth, $location, $alert){
-        $scope.signup = function(){
-          console.log("avatar >>", $scope.avatar)
+  var app = angular.module("EveryPublished")
 
-          $auth.signup({
-            name: $scope.name,
-            email: $scope.email,
-            password: $scope.password,
-            direction: $scope.direction,
-            about: $scope.about,
-            avatar: $scope.avatar
+  app.controller("signupCtrl", function($scope, $auth, $location, $alert){
 
+    $scope.formData = {}
+
+    $scope.signup = function(){
+
+      $auth.signup({
+        name: $scope.formData.name,
+        email: $scope.formData.email,
+        password: $scope.formData.password,
+        direction: $scope.formData.direction,
+        about: $scope.formData.about,
+        avatar: $scope.formData.avatar
+
+      })
+      .then(function(){
+        $location.path("/")
+      })
+      .catch(function(response){
+        if(typeof response.data.message === 'object'){
+          $alert({
+            content: message[0],
+            animation: "fadeZoomFadeDown",
+            type: "material",
+            duration: 3
           })
-          .then(function(){
-            $location.path("/")
-          })
-          .catch(function(response){
-            if(typeof response.data.message === 'object'){
-              $alert({
-                content: message[0],
-                animation: "fadeZoomFadeDown",
-                type: "material",
-                duration: 3
-              })
-            }
-            else{
-              $alert({
-                content: response.data.message,
-                animation: "fadeZoomFadeDown",
-                type: "material",
-                duration: 3
-              })
-            }
-          })
-
         }
-    })
+        else{
+          $alert({
+            content: response.data.message,
+            animation: "fadeZoomFadeDown",
+            type: "material",
+            duration: 3
+          })
+        }
+      })
+    }
+  })
 
   app.controller("loginCtrl", function($scope, $auth, $location,  $alert){
 

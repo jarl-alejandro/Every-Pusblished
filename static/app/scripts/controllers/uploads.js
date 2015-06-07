@@ -43,4 +43,23 @@
 
   })
 
+  app.controller("signupTwoCtrl", function($scope, $state){
+
+    var nextState = function(currentState){
+      switch (currentState) {
+        case 'signup.signupTwo':
+            return 'signup.signupThree'
+            break;
+        default:
+            alert('No se han encontrado interruptor');
+      }
+    }
+
+    $scope.goToNextSection = function(isFormValid){
+      if(isFormValid){
+        $state.go(nextState($state.current.name));
+      }
+    }
+  })
+
 })()

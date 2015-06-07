@@ -1,0 +1,33 @@
+<div  class="form-group" ng-class='{
+  "has-focus":form.direction.hasFocus,
+  "has-success":form.direction.$valid,
+  "has-error":form.direction.$invalid && (form.$submitted || form.direction.$touched),
+  "is-empty":!form.direction.$viewValue}'>
+
+  <label for="direction">Direction</label>
+  <input type="text" name="direction" ng-model="formData.direction" required
+    ng-focus='form.direction.hasFocus=true', ng-blur='form.direction.hasFocus=false' />
+  <p ng-show="form.direction.$error.required && (form.direction.$touched || submitted)"
+    class="error-block">
+    direction is Required!
+  </p>
+</div>
+
+<div class="form-group" ng-class='{
+  "has-focus":form.about.hasFocus,
+  "has-success":form.about.$valid,
+  "has-error":form.about.$invalid && (form.$submitted || form.about.$touched),
+  "is-empty":!form.about.$viewValue}'>
+
+  <label for="about">About</label>
+  <textarea name="about" ng-model="formData.about" required
+    ng-focus='form.about.hasFocus=true', ng-blur='form.about.hasFocus=false'>
+  </textarea>
+  <p ng-show="form.about.$error.required && (form.about.$touched || submitted)"class="error-block">
+    about is Required!
+  </p>
+</div>
+
+<div>
+  <input type="submit" />
+</div>

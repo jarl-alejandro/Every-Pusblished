@@ -25,13 +25,15 @@
     $scope.getProfile()
 
     $scope.newPublish = function(){
-      console.log("nombre ", $scope.formData.name)
+      console.log("category ", $scope.formData.category)
       PublishedResource.save({
         "name" : $scope.formData.name,
         "price" :  $scope.formData.price,
         "photo" :  $scope.formData.photo,
-        "description" :  $scope.formData.description
+        "description" :  $scope.formData.description,
+        "category": $scope.formData.category
       }, function(data){
+        console.log(data)
         $location.path("/")
       })
     }
