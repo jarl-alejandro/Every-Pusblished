@@ -35,6 +35,8 @@
   "has-error":form.category.$invalid && (form.$submitted || form.category.$touched),
   "is-empty":!form.category.$viewValue}'>
 
+  <label for="category">Categoria</label>
+
   <select name="category" ng-model="formData.category" required
     ng-focus='form.category.hasFocus=true', ng-blur='form.category.hasFocus=false'>
 
