@@ -9,12 +9,23 @@
 
 <section>
   <article class="publish card">
-    <figcaption>
-      <img src="{{ published.photo }}" width="716" height="100" />
-    </figcaption>
-    <h2>{{ published.name }}</h2>
-    <p>{{ published.description }}</p>
-    <p>{{ published.category }}</p>
+    <figure class="publish-photo relative">
+      <img src="{{ published.photo }}" alt="{{ published.name }}">
+      <figcaption class="publish-name">
+        <h2>{{ published.name }}</h2>
+      </figcaption>
+    </figure>
+    <div>
+      <p>{{ published.description }}</p>
+    </div>
+    <div>
+      <p class="price">
+        {{ published.price }}
+      </p>
+      <p class="category">
+        {{ published.category }}
+      </p>
+    </div>
   </article>
 
   <article class="comment">
