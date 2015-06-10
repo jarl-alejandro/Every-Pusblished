@@ -49,6 +49,9 @@
 .author
   margin-top 2em
   width 27em
+  position relative
+  left 60em
+  bottom 35.7em
 
 .alert-material
   position fixed
@@ -99,10 +102,10 @@
 .publish
   margin 3em
   width 55em
-  height 30em
+  height 26em
 
-.publish-name
-  background rgba(black, .5)
+.publish-price
+  background rgba(black, .8)
   color rgba(black 1)
   text-align right
   position absolute
@@ -111,6 +114,7 @@
   bottom .1em
 
   h2
+    color white
     margin-right 20px
     font-size 2.7em
 
@@ -127,6 +131,12 @@
   transition all 0.3s ease
 
 //ocss
+.italic
+  font-style italic
+
+.border-top
+  border-top 1px solid rgba(black .3)
+
 .card
   border-radius 2px
   color rgba(black, 0.84)
@@ -230,3 +240,120 @@
     span
       color white
       background #f74815
+
+
+//Detail Published
+.calc
+  margin-top 2em
+  width 27em
+  height 17em
+  position relative
+  left 60em
+  bottom 36em
+
+.calc-precios
+  background rgba(#B6B6B6, .4)
+  text-align center
+
+.btn-calc
+  background #5bc0de
+  color white
+  text-decoration none
+  box-shadow 0 2px 5px 0 rgba(0,0,0,.26)
+  border-radius 2px
+  padding 10px 25px
+  cursor pointer
+  font-size 1.2em
+  border 0
+  position relative
+  bottom 5em
+  left 16.5em
+
+  &:hover
+    background #46b8da
+    text-decoration none
+    color white
+
+.llamar
+  text-align center
+  font-weight bolder
+  font-size 1.1em
+  span
+    font-style italic
+
+.otherPublish
+  width 21em
+  margin 0 auto
+  transition-duration .5s
+  &:hover
+    box-shadow 0 3px 40px rgba(black,0.23),0 3px 40px rgba(black,0.23)
+
+
+.otherPublished-name
+  text-align center
+  margin 0
+  padding 1em 0 .5em 0
+  //background rgba(#B6B6B6, .4)
+  text-align center
+
+.otherPublished-photo
+  margin 0
+  padding 0
+
+  img
+    width 100%
+    height 11.5em
+
+
+.otherPublished
+  margin-top 2em
+  width 27em
+  height 30em
+  position relative
+  left 60em
+  bottom 36.5em
+
+  .otherPublishe-info
+    background rgba(#B6B6B6, .4)
+    text-align center
+
+
+.publishAbout
+  padding 1em
+  h4
+    font-weight bolder
+    font-style italic
+
+.publish-avatar
+  text-align center
+  img
+    width 9.38em //12.5em
+    height 9.38em
+    border-radius 50%
+
+.publish-category
+  text-align center
+  margin-top .6em
+  p
+    font-size 1.2em
+
+.publish-info
+  background rgba(#B6B6B6, .4)
+  text-align center
+
+.published-title
+  padding .1em
+  width 55em
+  position relative
+  bottom 2.6em
+  left 3em
+  h2
+    text-align center
+
+.tabla-precios
+  width 90% !important
+  margin -4em 1em -5em 1.3em
+  padding 1.5em
+
+  td
+    font-weight bolder

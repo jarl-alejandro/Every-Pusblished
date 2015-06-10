@@ -12,6 +12,7 @@
 
       $auth.signup({
         name: $scope.formData.name,
+        phone: $scope.formData.phone,
         email: $scope.formData.email,
         password: $scope.formData.password,
         direction: $scope.formData.direction,

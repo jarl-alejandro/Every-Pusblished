@@ -42,6 +42,12 @@
 
   app.controller("publishedCtrl", function($scope, $stateParams, PublishedResource){
     $scope.published = PublishedResource.get({ id:$stateParams.id })
+    $scope.total = 0
+
+    $scope.calcular = function(){
+      $scope.total = $scope.published.price * $scope.cantidad
+    }
+
   })
 
 })()

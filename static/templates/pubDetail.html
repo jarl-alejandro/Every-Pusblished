@@ -11,30 +11,86 @@
   <article class="publish card">
     <figure class="publish-photo relative">
       <img src="{{ published.photo }}" alt="{{ published.name }}">
-      <figcaption class="publish-name">
-        <h2>{{ published.name }}</h2>
+      <figcaption class="publish-price">
+        <h2>$ {{ published.price }}</h2>
       </figcaption>
     </figure>
-    <div>
+    <div class="publish-category">
       <p>{{ published.description }}</p>
     </div>
-    <div>
-      <p class="price">
-        {{ published.price }}
-      </p>
-      <p class="category">
-        {{ published.category }}
-      </p>
-    </div>
   </article>
+  <div class="published-title card">
+    <h2>{{ published.name }}</h2>
+  </div>
 
   <article class="comment">
   </article>
 </section>
 
 <aside class="author card">
-  <h3>Autor {{ published.user.name }}</h3>
+  <h3 class="publish-info">Informacion</h3>
+  <div>
+    <figure class="publish-avatar">
+      <img src="{{ published.user.avatar }}" alt="{{ published.user.name }}">
+    </figure>
+    <div class="llamar">
+      <p>
+        Cuando llames, indica que viste el anuncio en <span>Every Published</span>
+      </p>
+    </div>
+    <div class="publishAbout">
+      <h4 class="publishAbout-name">
+        <span>X</span>
+        {{ published.user.name }}
+      </h4>
+      <h4 class="publishAbout-phone">
+        <span>X</span>
+        {{ published.user.phone }}
+      </h4>
+      <h4 class="publishAbout-direction">
+        <span>X</span>
+        {{ published.user.direction }}
+      </h4>
+    </div>
+  </div>
 </aside>
-<aside class="card other-author">
-  <h3>Otras publicaciones por {{ published.user.name }}</h3>
+
+<aside class="calc card">
+  <h3 class="calc-precios">Precios</h3>
+
+  <form name="form" ng-submit="calcular()">
+    <div class="form-group" ng-class='{
+      "has-focus":form.cantidad.hasFocus,
+      "has-success":form.cantidad.$valid,
+      "is-empty":!form.cantidad.$viewValue}'>
+
+      <label for="name" class="calcPrice-label">Cantidad</label>
+
+      <input type="number" name="cantidad" class="calc-price" ng-model="cantidad" required
+        ng-focus='form.cantidad.hasFocus=true', ng-blur='form.cantidad.hasFocus=false' />
+    </div>
+    <input type="submit" class="btn-calc" value="Total">
+  </form>
+  <table class="table table-bordered tabla-precios">
+    <tr>
+      <td class="italic">Precio del plato</td>
+      <td ng-model="published.price">{{ published.price }}</td>
+    </tr>
+    <tr>
+      <td class="italic">Cantidad</td>
+      <td>{{ total }}</td>
+    </tr>
+  </table>
+</aside>
+
+<aside class="card otherPublished">
+  <h3 class="otherPublishe-info">Otras publicaciones por {{ published.user.name }}</h3>
+  <div class="card otherPublish">
+    <h4 class="otherPublished-name">
+      {{ published.name }}
+    </h4>
+    <div class="otherPublished-photo">
+      <img src="{{ published.photo }}" alt="{{ published.name }}">
+    </div>
+  </div>
 </aside>

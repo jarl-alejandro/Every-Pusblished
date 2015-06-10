@@ -13,6 +13,21 @@
   </p>
 </div>
 
+<div  class="form-group" ng-class='{
+  "has-focus":form.phone.hasFocus,
+  "has-success":form.phone.$valid,
+  "has-error":form.phone.$invalid && (form.$submitted || form.phone.$touched),
+  "is-empty":!form.phone.$viewValue}'>
+
+  <label for="phone">Telefono</label>
+  <input type="number" min="7" name="phone" ng-model="formData.phone" required
+    ng-focus='form.phone.hasFocus=true', ng-blur='form.phone.hasFocus=false' />
+  <p ng-show="form.phone.$error.required && (form.phone.$touched || submitted)"
+    class="error-block">
+    Telefono es Requerido!
+  </p>
+</div>
+
 <div class="form-group" ng-class='{
   "has-focus":form.about.hasFocus,
   "has-success":form.about.$valid,
