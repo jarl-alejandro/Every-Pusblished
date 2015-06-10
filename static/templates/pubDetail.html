@@ -22,22 +22,6 @@
   <div class="published-title card">
     <h2>{{ published.name }}</h2>
   </div>
-
-  <article class="card comment">
-  <h4 class="comentarios-info"><span>X</span> Comentarios</h4>
-    <form name="form">
-      <div class="form-group" ng-class='{
-        "has-focus":form.comments.hasFocus,
-        "has-success":form.comments.$valid,
-        "is-empty":!form.comments.$viewValue}'>
-
-        <label for="comments">Comenta que te parecio....</label>
-        <input type="text" class="comments" name="comments" ng-model="formData.comments" required
-          ng-focus='form.comments.hasFocus=true', ng-blur='form.comments.hasFocus=false' />
-      </div>
-    </form>
-  </article>
-
 </section>
 
 <aside class="author card">
@@ -107,3 +91,26 @@
     </div>
   </div>
 </aside>
+
+<article class="card comment">
+  <h4 class="comentarios-info"><span>X</span> Comentarios</h4>
+  <form name="form">
+    <div class="form-group comment-group" ng-class='{
+      "has-focus":form.comments.hasFocus,
+      "has-success":form.comments.$valid,
+      "is-empty":!form.comments.$viewValue}'>
+
+      <label for="comments">Comenta que te parecio....</label>
+      <input type="text" class="comment-input" name="comments" ng-model="formData.comments" required
+        ng-focus='form.comments.hasFocus=true', ng-blur='form.comments.hasFocus=false' />
+    </div>
+  </form>
+  <p>Me parece muy nutritivo y bueno</p>
+  <p>Me parece muy nutritivo y bueno</p>
+  <p>Me parece muy nutritivo y bueno</p>
+  <p>Me parece muy nutritivo y bueno</p>
+  <p>Me parece muy nutritivo y bueno</p>
+  <p>Me parece muy nutritivo y bueno</p>
+  <p>Me parece muy nutritivo y bueno</p>
+  <p>Me parece muy nutritivo y bueno</p>
+</article>
