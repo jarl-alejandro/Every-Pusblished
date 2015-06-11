@@ -4,9 +4,11 @@ var port = process.env.PORT || 3000
 var http = require('http')
 var mongoose = require("mongoose")
 var App = require('./lib')
+var realtime = require('./realtime')
 
 var everyPublised = new App({})
 var server = http.createServer(everyPublised.app)
+var IO = new realtime({ server:server })
 
 mongoose.connect("mongodb://localhost/publicar", onListenDB)
 

@@ -2,7 +2,7 @@
   <div class="app-bar-container paper-toolbar">
     <button class="menu">=</button>
     <h1 class="logo">
-      Material toolbar
+      Every Published {{ user.name }}
     </h1>
   </div>
 </header><hr><hr>
@@ -80,37 +80,26 @@
   </table>
 </aside>
 
-<aside class="card otherPublished">
-  <h3 class="otherPublishe-info">Otras publicaciones por {{ published.user.name }}</h3>
-  <div class="card otherPublish">
-    <h4 class="otherPublished-name">
-      {{ published.name }}
-    </h4>
-    <div class="otherPublished-photo">
-      <img src="{{ published.photo }}" alt="{{ published.name }}">
-    </div>
-  </div>
-</aside>
-
 <article class="card comment">
   <h4 class="comentarios-info"><span>X</span> Comentarios</h4>
-  <form name="form">
+  <form name="form" ng-submit="pubComentario()">
     <div class="form-group comment-group" ng-class='{
       "has-focus":form.comments.hasFocus,
       "has-success":form.comments.$valid,
       "is-empty":!form.comments.$viewValue}'>
 
       <label for="comments">Comenta que te parecio....</label>
-      <input type="text" class="comment-input" name="comments" ng-model="formData.comments" required
+      <input type="text" class="comment-input" name="comments" ng-model="formData.commentTxt" required
         ng-focus='form.comments.hasFocus=true', ng-blur='form.comments.hasFocus=false' />
     </div>
   </form>
-  <p>Me parece muy nutritivo y bueno</p>
-  <p>Me parece muy nutritivo y bueno</p>
-  <p>Me parece muy nutritivo y bueno</p>
-  <p>Me parece muy nutritivo y bueno</p>
-  <p>Me parece muy nutritivo y bueno</p>
-  <p>Me parece muy nutritivo y bueno</p>
-  <p>Me parece muy nutritivo y bueno</p>
-  <p>Me parece muy nutritivo y bueno</p>
+  <div ng-repeat="message in messages" class="comentarios">
+    <p>
+      <img src="{{ message.user.avatar }}" alt="{{ message.user.name }}" width="32" height="32">
+      <span class="comentario-name">{{ message.user.name }}</span>
+      <span class="comentario-comment">
+        {{ message.comment }}
+      </span>
+    </p>
+  </div>
 </article>

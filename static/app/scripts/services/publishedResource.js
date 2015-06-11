@@ -7,4 +7,5 @@
     return $resource('/api/published/:id', { id:"@id" }, { update:{ method:"PUT" } })
   })
 
+
 })()
